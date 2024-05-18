@@ -209,7 +209,7 @@ class ConfiguredModel(ABC):
 
         try:
             if self.model.service == ServiceID.OPENAI.value:
-                if self.model.id == ModelID.GPT_4.value:
+                if self.model.id in [ModelID.GPT_4.value, ModelID.GPT_4_O.value]:
                     self.tokenizer = tiktoken.encoding_for_model(
                         ModelID.GPT_3_5_TURBO.value
                     )
@@ -347,7 +347,7 @@ class ConfiguredOpenAIChatCompletionModel(ConfiguredTextCompletionModel):
         assert max_tokens is None or max_tokens > 0
         assert temperature >= 0.0 and temperature <= 1.0
         assert stop is None or isinstance(stop, list)
-
+        print(max_tokens)
         payload = {
             "model": self.model.id,
             "messages": messages,
@@ -425,6 +425,7 @@ class ConfiguredOpenAIChatCompletionModel(ConfiguredTextCompletionModel):
                                 yield model_error
                         return
                 except Exception as e:
+                    print(f'/n/nERROR OCCURRED')
                     logging.warning(f"Request {payload} failed with exception {e}")
                     await self.status_tracker.increment_error_count_other()
                     yield Err(UncaughtModelException(str(e)))

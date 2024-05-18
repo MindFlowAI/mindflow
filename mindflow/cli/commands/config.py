@@ -48,6 +48,7 @@ def config():
         model_ids = [
             ModelID.GPT_3_5_TURBO.value,
             ModelID.GPT_4.value,
+            ModelID.GPT_4_O.value
         ]
         model_options: List[Model] = [Model.load(model_id) for model_id in model_ids]
         model_descriptions: List[str] = [

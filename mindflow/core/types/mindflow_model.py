@@ -51,7 +51,7 @@ class ConfiguredMindFlowModels:
                 MindFlowModelID.INDEX.value, mindflow_model.defaults
             )
 
-        if model_id in [ModelID.GPT_3_5_TURBO.value, ModelID.GPT_4.value]:
+        if model_id in [ModelID.GPT_3_5_TURBO.value, ModelID.GPT_4.value, ModelID.GPT_4_O.value]:
             return ConfiguredOpenAIChatCompletionModel(model_id)
         raise Exception("Unsupported model: " + model_id)
 
@@ -69,7 +69,7 @@ class ConfiguredMindFlowModels:
                 MindFlowModelID.QUERY.value, mindflow_model.defaults
             )
 
-        if model_id in [ModelID.GPT_3_5_TURBO.value, ModelID.GPT_4.value]:
+        if model_id in [ModelID.GPT_3_5_TURBO.value, ModelID.GPT_4.value, ModelID.GPT_4_O.value]:
             return ConfiguredOpenAIChatCompletionModel(model_id)
         raise Exception("Unsupported model: " + model_id)
 
