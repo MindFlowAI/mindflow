@@ -347,7 +347,7 @@ class ConfiguredOpenAIChatCompletionModel(ConfiguredTextCompletionModel):
         assert max_tokens is None or max_tokens > 0
         assert temperature >= 0.0 and temperature <= 1.0
         assert stop is None or isinstance(stop, list)
-        print(max_tokens)
+
         payload = {
             "model": self.model.id,
             "messages": messages,
