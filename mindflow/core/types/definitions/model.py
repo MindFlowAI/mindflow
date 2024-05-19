@@ -32,6 +32,8 @@ class ModelID(Enum):
     GPT_4_32K = "gpt-4-32k"
     GPT_4_32K_0314 = "gpt-4-32k-0314"
 
+    GPT_4_O = "gpt-4o"
+
     CLAUDE_V1 = "claude-v1"
     CLAUDE_V1_2 = "claude-v1.2"
     CLAUDE_INSTANT_V1 = "claude-instant-v1"
@@ -52,7 +54,7 @@ MODEL_STATIC: dict = {
         ModelParameterKey.MAX_TOKENS_PER_MINUTE.value: 40_000,
         ModelParameterKey.TOKEN_COST.value: 0.002,
         ModelParameterKey.TOKEN_COST_UNIT.value: 1_000,
-        ModelParameterKey.CONFIG_DESCRIPTION.value: f"GPT 3.5 Turbo:       OpenAI's Fast, cheap, and still powerful model.       Token Limit: {4_000}.",
+        ModelParameterKey.CONFIG_DESCRIPTION.value: f"GPT 3.5 Turbo:       OpenAI's Fast, cheap, and still powerful model.                    Token Limit: {4_000}.",
     },
     ModelID.GPT_3_5_TURBO_0301.value: {
         ModelParameterKey.ID.value: ModelID.GPT_3_5_TURBO_0301.value,
@@ -79,7 +81,7 @@ MODEL_STATIC: dict = {
         ModelParameterKey.MAX_TOKENS_PER_MINUTE.value: 40_000,
         ModelParameterKey.TOKEN_COST.value: 0.002,
         ModelParameterKey.TOKEN_COST_UNIT.value: 1_000,
-        ModelParameterKey.CONFIG_DESCRIPTION.value: f"GPT 4:               OpenAI's most powerful model (slower + expensive).    Token Limit: {str(8192)}. Get access -> https://openai.com/waitlist/gpt-4-api.",
+        ModelParameterKey.CONFIG_DESCRIPTION.value: f"GPT 4:               OpenAI's previous high intelligence model (slower + expensive).    Token Limit: {str(8192)}.",
     },
     ModelID.GPT_4_0314.value: {
         ModelParameterKey.ID.value: ModelID.GPT_4_0314.value,
@@ -119,6 +121,20 @@ MODEL_STATIC: dict = {
         ModelParameterKey.MAX_TOKENS_PER_MINUTE.value: 90_000,
         ModelParameterKey.TOKEN_COST.value: 0.002,
         ModelParameterKey.TOKEN_COST_UNIT.value: 1_000,
+    },
+    ModelID.GPT_4_O.value: {
+        ModelParameterKey.ID.value: ModelID.GPT_4_O.value,
+        ModelParameterKey.NAME.value: "GPT 4o",
+        ModelParameterKey.SERVICE.value: "openai",
+        ModelParameterKey.MODEL_TYPE.value: ModelType.TEXT_COMPLETION.value,
+        ModelParameterKey.URL.value: "https://api.openai.com/v1/chat/completions",
+        ModelParameterKey.DEFAULT_SOFT_TOKEN_LIMIT.value: 5000,
+        ModelParameterKey.HARD_TOKEN_LIMIT.value: 128_000,
+        ModelParameterKey.MAX_REQUESTS_PER_MINUTE.value: 3_500,
+        ModelParameterKey.MAX_TOKENS_PER_MINUTE.value: 90_000,
+        ModelParameterKey.TOKEN_COST.value: 0.002,
+        ModelParameterKey.TOKEN_COST_UNIT.value: 1_000,
+        ModelParameterKey.CONFIG_DESCRIPTION.value: f"GPT 4o:              OpenAI's fasted and most affordable flagship model.                Token Limit: {str(128_000)}.",
     },
     ModelID.TEXT_EMBEDDING_ADA_002.value: {
         ModelParameterKey.ID.value: ModelID.TEXT_EMBEDDING_ADA_002.value,
