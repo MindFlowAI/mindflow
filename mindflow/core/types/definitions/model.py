@@ -54,7 +54,7 @@ MODEL_STATIC: dict = {
         ModelParameterKey.MAX_TOKENS_PER_MINUTE.value: 40_000,
         ModelParameterKey.TOKEN_COST.value: 0.002,
         ModelParameterKey.TOKEN_COST_UNIT.value: 1_000,
-        ModelParameterKey.CONFIG_DESCRIPTION.value: f"GPT 3.5 Turbo:       OpenAI's Fast, cheap, and still powerful model.       Token Limit: {4_000}.",
+        ModelParameterKey.CONFIG_DESCRIPTION.value: f"GPT 3.5 Turbo:       OpenAI's Fast, cheap, and still powerful model.                    Token Limit: {4_000}.",
     },
     ModelID.GPT_3_5_TURBO_0301.value: {
         ModelParameterKey.ID.value: ModelID.GPT_3_5_TURBO_0301.value,
@@ -134,7 +134,7 @@ MODEL_STATIC: dict = {
         ModelParameterKey.MAX_TOKENS_PER_MINUTE.value: 90_000,
         ModelParameterKey.TOKEN_COST.value: 0.002,
         ModelParameterKey.TOKEN_COST_UNIT.value: 1_000,
-        ModelParameterKey.CONFIG_DESCRIPTION.value: f"GPT 40:               OpenAI's fasted and most affordable flagship model.    Token Limit: {str(128_000)}.",
+        ModelParameterKey.CONFIG_DESCRIPTION.value: f"GPT 4o:              OpenAI's fasted and most affordable flagship model.                Token Limit: {str(128_000)}.",
     },
     ModelID.TEXT_EMBEDDING_ADA_002.value: {
         ModelParameterKey.ID.value: ModelID.TEXT_EMBEDDING_ADA_002.value,
